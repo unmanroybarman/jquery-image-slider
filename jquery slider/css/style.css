@@ -1,0 +1,63 @@
+body{
+    font-family: "Arial", sans-serif;
+    font-size:14px;
+    color:#fff;
+    background: #333;
+}
+
+a{
+    color:#fff;
+    text-decoration:none;   
+}
+
+
+h1{
+    text-align: center;
+}
+
+
+.container{
+    width:540px;
+    margin:40px auto; /* centering the box */
+    overflow:auto; /* browser decides whether to display a vertical scrollbar or not */
+}
+
+
+.slider-inner{
+    width:500px;
+    height:300px;
+    position:relative;
+    overflow:hidden;/* to display only 1 image at first, not all the images */
+    float:left;
+    padding:3px;
+    border:#666 solid 1px;
+}
+ /* for image inside */
+.slider-inner img{
+    display:none; /* it hides all the images at first initially, shows the box as empty */
+    width:500px;
+    height:300px;
+}
+
+/* showing only the active image */
+.slider-inner img.active{
+    display:inline-block;
+}
+
+.prev, .next{
+    float:left;/* moves the element to left side of its container, the following elements will wrap around it & fill the space remaining on the right */
+    margin-top:130px;
+    cursor:pointer; /* sets the mouse cursor whn hovering the element */
+}
+
+.prev{
+    position:relative;
+    margin-right:-45px;/* it shifts the .prev arrow to left on image */
+    z-index: 100; /* order of elements on z axis, it is 100 so that it always be on top...if you have 2 elemets at same spot, higher the z-index, higher the prioroty is of shwoing it...if you have lower in z-index,it will go under that element*/
+}
+
+.next{
+  position:relative;
+    margin-left:-45px;/* shifts right(next) arrow to right side on image */
+    z-index:100;
+}
